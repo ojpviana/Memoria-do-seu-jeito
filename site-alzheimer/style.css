@@ -74,8 +74,9 @@ svg {
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: repeat(4, 100px);
     gap: 2px;
-    margin: 20px auto;
-    border: 2px solid #333;
+    margin: 20px 560px;
+    justify-content: center;
+    border: 2px #333;
 }
 
 
