@@ -1,0 +1,59 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(103, 72, 202);
+    color: white;
+    font-family: MV Boli;
+}
+
+#reset-button {
+   background-color: transparent;
+   border-color: transparent;
+   
+
+}
+
+#reset-button:hover 
+{     transform: scale(1.2); }
+
+svg {
+    width: 50px;
+    padding: 10px 20px;     
+   font-size: 16px;     
+   cursor: pointer;     
+   transition: transform 0.3s ease-in-out;
+}
+
+
+
+#game-container {
+    text-align: center;
+}
+
+#memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 2px;
+    margin: 20px auto;
+    border: 2px solid #333;
+}
+
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    cursor: pointer;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+
+.card:hover {
+    background-color: #ccc;
+}
