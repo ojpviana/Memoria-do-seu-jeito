@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória 4x4</title>
+    <link rel="stylesheet" href="style-jogo.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Memória do Seu Jeito</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="jogo.html">Jogo da Memória</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="game-info">
+        <div id="player-info">
+            <label for="player-name">Jogador:</label>
+            <input type="text" id="player-name" placeholder="Digite seu nome">
+        </div>
+        <div id="timer">Tempo: 00:00</div>
+    </div>
+    <div class="button-container">
+        <button id="start-button">Iniciar Jogo</button>
+        <button id="restart-button">Reiniciar Jogo</button>
+        <button id="upload-button">Adicionar Imagens</button> <!-- Novo botão -->
+    </div>
+    <br>
+    
+
+    
+    <!-- Input de arquivos para adicionar as imagens -->
+    <input type="file" id="image-upload" accept="image/*" style="display: none;" multiple> <!-- Este input é oculto -->
+        
+    <div class="game-container">
+        <div class="memory-game">
+            <div class="memory-card" data-framework="zero">
+                <img class="front-face" src="zero.png" alt="Zero">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="zero">
+                <img class="front-face" src="zero.png" alt="Zero">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="um">
+                <img class="front-face" src="um.png" alt="Um">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="um">
+                <img class="front-face" src="um.png" alt="Um">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="dois">
+                <img class="front-face" src="dois.png" alt="Dois">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="dois">
+                <img class="front-face" src="dois.png" alt="Dois">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="tres">
+                <img class="front-face" src="tres.png" alt="Três">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="tres">
+                <img class="front-face" src="tres.png" alt="Três">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="quatro">
+                <img class="front-face" src="quatro.png" alt="Quatro">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="quatro">
+                <img class="front-face" src="quatro.png" alt="Quatro">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="cinco">
+                <img class="front-face" src="cinco.png" alt="Cinco">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="cinco">
+                <img class="front-face" src="cinco.png" alt="Cinco">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="seis">
+                <img class="front-face" src="seis.png" alt="Seis">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="seis">
+                <img class="front-face" src="seis.png" alt="Seis">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="sete">
+                <img class="front-face" src="sete.png" alt="Sete">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+            <div class="memory-card" data-framework="sete">
+                <img class="front-face" src="sete.png" alt="Sete">
+                <img class="back-face" src="interrogacao.png" alt="Memory Card">
+            </div>
+        </div>
+        <div class="right-panel">
+            <h2 style="text-align: center; margin-right: 90px;">Quadro de Recordes</h2>
+            <table id="leaderboard">
+                <thead>
+                    <tr>
+                        <th>Nome do Jogador</th>
+                        <th>Tempo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

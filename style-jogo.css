@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #e5e5ec;
+    color: black;
+    margin: 0;
+    height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
+    overflow: hidden; /* Impede rolagem na tela */
+}
+
+header {
+    background-color: #74a6c7;
+    color: white;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Ajuste aqui para o conteúdo se espalhar */
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 200px;
+    text-align: center;
+    gap: 20px;
+}
+
+#player-info {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#player-info label {
+    margin-right: 10px;
+}
+
+#player-name {
+    padding: 5px;
+    font-size: 16px;
+}
+
+#timer {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.game-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    flex-grow: 1; /* Garantir que o contêiner de jogo ocupe o máximo possível */
+    height: 100%; /* Garantir que o contêiner de jogo ocupe toda a altura */
+}
+
+.memory-game {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    grid-template-rows: repeat(4, 1fr); /* 4 linhas */
+    gap: 10px;
+    max-width: 600px; /* Limitar a largura máxima do tabuleiro */
+    max-height: 600px; /* Limitar a altura máxima do tabuleiro */
+    margin: auto; /* Centralizar o tabuleiro na tela */
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.right-panel {
+    flex: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 8px;
+    text-align: left;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    left: 50px;
+    
+
+}
+
+#start-button, #restart-button,#upload-button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #61dafb;
+    color: #282c34;
+    border-radius: 5px;
+}
