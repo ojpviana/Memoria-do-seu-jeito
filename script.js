@@ -3,7 +3,7 @@ document.getElementById('upload-button').addEventListener('click', function() {
 });
 
 document.getElementById('image-upload').addEventListener('change', function(event) {
-    const files = event.target.files;
+    const files = Array.from(event.target.files);
     
     // Verifica se o número de imagens selecionadas é suficiente (precisamos de 8 imagens)
     if (files.length !== 8) {
@@ -11,23 +11,28 @@ document.getElementById('image-upload').addEventListener('change', function(even
         return;
     }
 
+    const pairedImages = files.flatMap((file, index) => [{file, id:index}, {file, id:index}]);
+
     // Embaralha as imagens selecionadas para tornar o jogo mais interessante
-    const shuffledImages = shuffleImages(Array.from(files));
+    const shuffledImages = shuffleImages(pairedImages);
 
     // Pegamos todas as cartas do jogo
     const cards = document.querySelectorAll('.memory-card');
     
     // Atribui as imagens para as cartas (duplicando as imagens)
-    for (let i = 0; i < cards.length; i++) {
+    shuffledImages.forEach(({file, id}, index) => {
         const reader = new FileReader();
         reader.onload = function(e) {
-            const imgFront = cards[i].querySelector('.front-face');
-            imgFront.src = e.target.result; // Altera a imagem da face da carta
+            const card = cards[index];
+            const imgFront = card.querySelector('.front-face'); // Altera a imagem da face da carta
+
+            imgFront.src = e.target.result;
+            card.dataset.framework = `custom${id}`;
         };
 
         // Atribui as imagens em ordem duplicada
-        reader.readAsDataURL(shuffledImages[i % 8]); // Duplicando as imagens
-    }
+        reader.readAsDataURL(file); // Duplicando as imagens
+    });
 });
 
 // Função para embaralhar as imagens (para tornar o jogo mais interessante)
